@@ -1,0 +1,6 @@
+*.o
+*.swp
+test
+back.cpp
+test.cpp
+input.txt
