@@ -15,7 +15,7 @@ while read line
 do
     echo "$line" >> tmp.txt
     if [ "$line" = "" ]; then
-    do_test
+        do_test
     fi
 done < input.txt
 
