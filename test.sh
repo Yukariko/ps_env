@@ -1,5 +1,12 @@
 #!/bin/bash
 
+function do_test() {
+    echo "do test..."
+    { ./test < tmp.txt; } >> output.txt 2>&1
+    echo "--------" >> output.txt
+    rm tmp.txt
+}
+
 make 2> output.txt
 [ $? -eq 0 ] || exit 1
 
@@ -8,11 +15,8 @@ while read line
 do
     echo "$line" >> tmp.txt
     if [ "$line" = "" ]; then
-        echo "do test..."
-        ./test < tmp.txt >> output.txt
-        echo "--------" >> output.txt
-        rm tmp.txt
+    do_test
     fi
 done < input.txt
 
-[ -e tmp.txt ] && ( ./test < tmp.txt >> output.txt; rm tmp.txt ; echo "--------" >> output.txt)
+[ -e tmp.txt ] && do_test
