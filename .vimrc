@@ -5,6 +5,8 @@ map <C-F5> :!./create.sh<CR>:redraw!<CR>
 
 let g:ale_c_clangtidy_checks = [
     \ '*',
+    \ '-modernize-loop-convert',
+    \ '-clang-diagnostic-c++17-extensions',
     \ '-readability-implicit-bool-conversion',
     \ '-google-runtime-int',
     \ '-hicpp-explicit-conversions',
