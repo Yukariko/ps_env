@@ -5,6 +5,12 @@ map <C-F5> :!./create.sh<CR>:redraw!<CR>
 
 let g:ale_c_clangtidy_checks = [
     \ '*',
+    \ '-google-runtime-reference',
+    \ '-google-explicit-constructor',
+    \ '-cppcoreguidelines-avoid-c-arrays',
+    \ '-hicpp-avoid-c-arrays',
+    \ '-cppcoreguidelines-pro-bounds-constant-array-index',
+    \ '-modernize-avoid-c-arrays',
     \ '-modernize-loop-convert',
     \ '-clang-diagnostic-c++17-extensions',
     \ '-readability-implicit-bool-conversion',
