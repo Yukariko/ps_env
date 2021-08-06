@@ -1,7 +1,15 @@
 map <F2> :!./test.sh<CR>:redraw!<CR>
-map <F3> :!clip.exe < ./test.cpp<CR>:redraw!<CR>
+if executable('pbcopy')
+    map <F3> :!pbcopy < ./test.cpp<CR>:redraw!<CR>
+else
+    map <F3> :!clip.exe < ./test.cpp<CR>:redraw!<CR>
+endif
 imap <F2> <ESC>:!./test.sh<CR>:redraw!<CR>
-map <C-F5> :!./create.sh<CR>:redraw!<CR>
+if has('unix')
+    map <F5> :!./create.sh<CR>:redraw!<CR>
+else
+    map <C-F5> :!./create.sh<CR>:redraw!<CR>
+endif
 
 let g:ale_c_clangtidy_checks = [
     \ '*',
@@ -39,3 +47,9 @@ let g:ale_c_clangtidy_checks = [
     \ '-readability-magic-numbers',
     \ '-readability-uppercase-literal-suffix']
 let g:ale_cpp_clangtidy_checks = g:ale_c_clangtidy_checks
+
+augroup LoadVimrc
+  autocmd!
+  " Reload vimrc on the fly
+  autocmd BufWritePost $MYVIMRC nested source $MYVIMRC
+augroup END
