@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 
+#ifdef ONLINE_JUDGE
 #define endl '\n'
+#endif
 using ll = long long;
 using ld = long double;
 
