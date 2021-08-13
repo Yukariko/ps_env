@@ -1,4 +1,4 @@
-CXXFLAGS=-g -Wall -O2 -std=c++17 -fconcepts-ts
+CXXFLAGS=-g -Wall -O2 -std=c++17 -fconcepts
 CXX=g++
 OBJS=test.o
 TARGET=test
