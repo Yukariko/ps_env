@@ -11,7 +11,7 @@ make 2> output.txt
 [ $? -eq 0 ] || exit 1
 
 echo -n "" > output.txt
-echo "" > tmp.txt
+echo -n "" > tmp.txt
 while read line
 do
     echo "$line" >> tmp.txt
