@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mv test.cpp back.cpp
-cp base.cpp test.cpp
+mv test.rs back.rs
+cp base.rs test.rs
 echo "" > input.txt
 echo "" > output.txt

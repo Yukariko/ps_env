@@ -7,7 +7,7 @@ function do_test() {
     rm tmp.txt
 }
 
-make 2> output.txt
+rustc 2> output.txt
 [ $? -eq 0 ] || exit 1
 
 echo -n "" > output.txt
