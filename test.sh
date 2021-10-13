@@ -7,11 +7,11 @@ function do_test() {
     rm tmp.txt
 }
 
-rustc 2> output.txt
+rustc test.rs --edition 2018 -O -o test 2> output.txt
 [ $? -eq 0 ] || exit 1
 
 echo -n "" > output.txt
-echo "" > tmp.txt
+echo -n "" > tmp.txt
 while read line
 do
     echo "$line" >> tmp.txt

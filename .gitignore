@@ -1,4 +1,5 @@
 *.o
+*.rs
 *.swp
 test
 *.cpp
