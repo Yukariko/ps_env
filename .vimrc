@@ -1,8 +1,8 @@
 map <F2> :!./test.sh<CR>:redraw!<CR>
 if executable('pbcopy')
-    map <F3> :!pbcopy < ./test.cpp<CR>:redraw!<CR>
+    map <F3> :!pbcopy < ./test.rs<CR>:redraw!<CR>
 else
-    map <F3> :!clip.exe < ./test.cpp<CR>:redraw!<CR>
+    map <F3> :!clip.exe < ./test.rs<CR>:redraw!<CR>
 endif
 imap <F2> <ESC>:!./test.sh<CR>:redraw!<CR>
 if has('unix')
